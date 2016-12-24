@@ -2,6 +2,11 @@
   (:require [clojure.test :refer :all]
             [clj-totp.core :refer :all]))
 
-(deftest a-test
-  (testing "FIXME, I fail."
-    (is (= 0 1))))
+(deftest it-validates-a-password
+  (let [{:keys [secret-key]} (generate-key "Testing" "test@example.com")
+        code (generate-otp secret-key)]
+    (is (valid-code? secret-key code))
+
+    (is (not (valid-code? secret-key (inc code))))
+
+    (is (not (valid-code? secret-key code (- (System/currentTimeMillis) 90000))))))

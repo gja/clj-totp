@@ -11,8 +11,8 @@ An unopinionated library for generating and validating TOTP with Google Authenti
 
 (comment "somehow persist the secret-key, and scan the qr-code-url with google authenticator")
 
-(validate-password "J5H6AG3ZANCKLTBK" 850602 1482538483070) ; => true (params: secret-key, password, time (optional))
-(validate-password "J5H6AG3ZANCKLTBK" 000000) ; => false
+(valid-code? "J5H6AG3ZANCKLTBK" 850602 1482538483070) ; => true (params: secret-key, password, time (optional))
+(valid-code? "J5H6AG3ZANCKLTBK" 000000) ; => false
 ```
 
 ## License
