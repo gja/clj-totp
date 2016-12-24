@@ -1,4 +1,4 @@
-(defproject clj-totp "0.1.0-SNAPSHOT"
+(defproject clj-totp "0.1.0"
   :description "Clojure TOTP (Time Based One Time Password) library"
   :url "https://github.com/gja/clj-totp"
   :license {:name "Eclipse Public License"
